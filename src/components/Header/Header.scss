@@ -1,0 +1,148 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+  background-color: $primary-color-white;
+  &__container {
+    padding: 1rem;
+    @include tablet {
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    @include desktop {
+      width: $desktop-breakpoint;
+      margin: 0 auto;
+    }
+  }
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  @include tablet {
+    width: 30%;
+    justify-content: flex-start;
+  }
+  &__logo {
+    width: 7.5rem;
+    height: auto;
+    margin-bottom: 1rem;
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    @include tablet {
+      flex-direction: row;
+    }
+    @include desktop {
+    }
+  }
+
+  &__search {
+    display: flex;
+    margin-bottom: 1rem;
+    @include tablet {
+      margin-right: 1rem;
+      margin-bottom: 0;
+      height: 2.5rem;
+      width: 16rem;
+    }
+    @include desktop {
+      width: 22rem;
+    }
+  }
+
+  &__search-tab {
+    display: flex;
+    align-items: center;
+    border: 1px solid $secondary-color-mercury;
+    border-radius: 5px;
+    padding: 5px;
+    width: 100%;
+    margin-right: 1rem;
+    @include tablet {
+      margin-right: 0;
+    }
+  }
+
+  &__search-icon {
+    color: $secondary-color-mercury;
+    @include tablet {
+      margin-left: 0.5rem;
+    }
+    @include desktop {
+      margin-right: 0.25rem;
+    }
+  }
+
+  &__search-input {
+    color: $primary-color-silver;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+
+  &__image {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    &--mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+    &--tablet {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color-blue;
+    border: 1px solid $primary-color-blue;
+    color: $primary-color-white;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    @include tablet {
+      width: 50%;
+      margin-right: 1rem;
+    }
+  }
+
+  &__upload-icon {
+    fill: $primary-color-white;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__button-text {
+    color: $primary-color-white;
+    @include body-copy;
+    text-align: center;
+    flex-grow: 1;
+  }
+}
