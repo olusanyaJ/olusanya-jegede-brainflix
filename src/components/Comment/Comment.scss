@@ -1,0 +1,83 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.comments {
+  border: 1px solid red;
+  border-bottom: 1px solid grey;
+  padding-bottom: 1rem;
+  &__subcontainer {
+    display: flex;
+    justify-content: space-around;
+  }
+  &__count {
+    margin: 1rem 0 1.5rem;
+    @include subheader;
+  }
+  &__title {
+    margin: 0;
+    margin-left: 3.25rem;
+  }
+
+  &__image {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 50%;
+    margin-right: 1rem;
+    @include tablet {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+  @include tablet {
+    display: flex;
+  }
+  &__area {
+    background-color: $secondary-color-alabaster;
+    padding: 1rem;
+    height: 6rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $secondary-color-mercury;
+    margin-bottom: 1rem;
+    &::placeholder {
+      color: $primary-color-black;
+      font-family: "Avenir Next LT Pro", sans-serif;
+      @include labels-and-buttons;
+    }
+    @include tablet {
+      height: 2.5rem;
+      margin-bottom: 0;
+      width: 30rem;
+      margin-right: 1.75rem;
+      padding: 0.55rem 1rem;
+    }
+  }
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color-blue;
+    border: 1px solid $primary-color-blue;
+    color: $primary-color-white;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    @include tablet {
+      width: 30%;
+    }
+  }
+
+  &__comment-icon {
+    fill: $primary-color-white;
+    width: 20px;
+    height: 20px;
+  }
+}

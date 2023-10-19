@@ -1,11 +1,12 @@
 import "./VideoPlayer.scss";
-import userAvatar from "../../assets/images/Mohan-muruge.jpg";
-
-// const VideoPlayer = ({ activeVideo }) => {
-const VideoPlayer = () => {
+const VideoPlayer = ({ videosData }) => {
   return (
     <section className="video-player">
-      <img className="image" src={userAvatar} alt="" />
+      <div className="video-player__wrapper">
+        <video className="video-player__image" width="" height="" controls>
+          <source src={videosData.image} type="video/mp4" />
+        </video>
+      </div>
     </section>
   );
 };

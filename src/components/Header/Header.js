@@ -15,7 +15,7 @@ const Header = () => {
             <div className="user__search">
               <div className="user__search-tab">
                 <svg
-                  class="user__search-icon"
+                  className="user__search-icon"
                   width="18"
                   height="18"
                   viewBox="0 0 18 18"
@@ -44,8 +44,8 @@ const Header = () => {
             <button className="user__button" type="user__upload">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="user__upload-icon"
-                enable-background="new 0 0 24 24"
+                className="user__upload-icon"
+                enableBackground="new 0 0 24 24"
                 height="24px"
                 viewBox="0 0 24 24"
                 width="24px"
