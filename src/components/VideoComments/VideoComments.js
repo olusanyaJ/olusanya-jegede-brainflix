@@ -6,7 +6,7 @@ const VideoComments = ({ videosDetails }) => {
       {videosDetails.comments.map((comment) => {
         const timestampDate = new Date(comment.timestamp).toLocaleDateString();
         return (
-          <div className="video-comments">
+          <div className="video-comments" key={comment.id}>
             <div className="video-comments__image"></div>
             <div className="video-comments__wrapper">
               <div className="comment">

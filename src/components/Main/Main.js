@@ -6,19 +6,33 @@ import VideoDetails from "../VideoDetails/VideoDetails";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
 import NewComment from "../NewComment/NewComment";
 import VideoComments from "../VideoComments/VideoComments";
+import VideosList from "../VideosList/VideosList";
 
 const Main = () => {
-  // Store the JSON in state
-  const [videosData, setVideosData] = useState(videosJson[0]);
-  const [videosDetails, setVideosDetails] = useState(videosDetailsJson[0]);
+  const [activeVideo, setActiveVideo] = useState(videosDetailsJson[0]);
+
+  const handleVideoClicked = (clickedVideoId) => {
+    const clickedVideo = videosDetailsJson.find(
+      (video) => video.id === clickedVideoId
+    );
+    setActiveVideo(clickedVideo);
+  };
+
+  const filterActiveVideo = videosJson.filter(
+    (video) => video.id !== activeVideo.id
+  );
 
   return (
     <main className="main">
-      <VideoPlayer videosData={videosData} />
+      <VideoPlayer videosData={filterActiveVideo} />
       <div className="main__container">
-        <VideoDetails videosDetails={videosDetails} />
+        <VideoDetails videosDetails={activeVideo} />
         <NewComment />
-        <VideoComments videosDetails={videosDetails} />
+        <VideoComments videosDetails={activeVideo} />
+        <VideosList
+          videosData={filterActiveVideo}
+          handleVideoClicked={handleVideoClicked}
+        />
       </div>
     </main>
   );

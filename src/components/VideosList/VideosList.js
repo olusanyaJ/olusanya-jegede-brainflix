@@ -1,24 +1,31 @@
-import Video from "../Video/Video";
+import "./VideosList.scss";
 
-const VideoList = ({ videos, handleClickVideo }) => {
+const VideosList = ({ videosData, handleVideoClicked }) => {
   return (
-    <>
-      {/* Map over the videos prop */}
-      {videos.map((video) => {
-        return (
-          <article
-            className="video"
-            key={video.id}
-            onClick={() => handleClickVideo(video.id)}
-          >
-            {" "}
-            {/* Add an onClick handler and pass the id */}
-            <h3 className="video__name">{video.description}</h3>
-          </article>
-        );
-      })}
-    </>
+    <section className="videos-list">
+      <h3 className="videos-list__title">NEXT VIDEOS</h3>
+      <div className="videos">
+        {videosData.map((video) => {
+          console.log(video.image);
+
+          return (
+            <button
+              key={video.id}
+              onClick={() => {
+                handleVideoClicked(video.id);
+              }}
+            >
+              <img className="imagee" src={video.image} alt="" />
+              <div>
+                <p>{video.title}</p>
+                <p>{video.channel}</p>
+              </div>
+            </button>
+          );
+        })}
+      </div>
+    </section>
   );
 };
 
-export default VideoList;
+export default VideosList;
