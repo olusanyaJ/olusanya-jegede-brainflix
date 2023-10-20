@@ -4,7 +4,8 @@ import videosJson from "../../data/videos.json";
 import videosDetailsJson from "../../data/video-details.json";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-import Comment from "../Comment/Comment";
+import NewComment from "../NewComment/NewComment";
+import VideoComments from "../VideoComments/VideoComments";
 
 const Main = () => {
   // Store the JSON in state
@@ -16,8 +17,8 @@ const Main = () => {
       <VideoPlayer videosData={videosData} />
       <div className="main__container">
         <VideoDetails videosDetails={videosDetails} />
-        <Comment />
-        rdxtcfyvgbuhnij xdcfgvbhjn dcfgvbhjnk
+        <NewComment />
+        <VideoComments videosDetails={videosDetails} />
       </div>
     </main>
   );
