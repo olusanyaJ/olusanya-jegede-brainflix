@@ -3,7 +3,84 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.imagee {
-  width: 10rem;
-  height: auto;
+.videos-list {
+  @include tablet {
+    width: 40%;
+  }
+  @include desktop {
+    width: 80%;
+    padding: 0 1rem;
+  }
+
+  &__title {
+    color: $secondary-color-mercury;
+    @include section-header;
+    font-size: 1rem;
+    margin: 1.5rem 0;
+  }
+}
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    background-color: $primary-color-white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  &__image-container {
+    margin-right: 1rem;
+  }
+
+  &__image {
+    width: 5.0781rem;
+    height: 3.125rem;
+    border-radius: 4px;
+    @include tablet {
+      width: 6.0938rem;
+      height: 3.75rem;
+    }
+    @include desktop {
+      width: 7.1094rem;
+      height: 4.375rem;
+    }
+  }
+
+  &__desc {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 3.125rem;
+    justify-content: space-between;
+    @include tablet {
+      height: 3.75rem;
+    }
+    @include desktop {
+      height: 4.375rem;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    text-align: left;
+    @include subheader;
+    @include tablet {
+      line-height: 1.3;
+    }
+  }
+
+  &__channel {
+    margin: 0;
+    text-align: left;
+    @include labels-and-buttons;
+    font-weight: 400;
+  }
 }

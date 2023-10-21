@@ -14,9 +14,9 @@ const VideoDetails = ({ videosDetails }) => {
               <span className="video__date">{timestampDate}</span>
             </div>
             <div className="video__stats">
-              <button className="video__button">
+              <div className="video__wrapper video__wrapper--top">
                 <svg
-                  className="video__upload-icon"
+                  className="video__icon"
                   width="22"
                   height="15"
                   viewBox="0 0 22 15"
@@ -28,14 +28,11 @@ const VideoDetails = ({ videosDetails }) => {
                     fill="#AFAFAF"
                   />
                 </svg>
-                <span className="video__button-text">
-                  {videosDetails.views}
-                </span>
-              </button>
-
-              <button className="video__button">
+                <p className="video__button-text">{videosDetails.views}</p>
+              </div>
+              <div className="video__wrapper">
                 <svg
-                  className="video__upload-icon"
+                  className="video__icon"
                   width="17"
                   height="16"
                   viewBox="0 0 17 16"
@@ -47,17 +44,13 @@ const VideoDetails = ({ videosDetails }) => {
                     fill="#AFAFAF"
                   />
                 </svg>
-                <span className="video__button-text">
-                  {videosDetails.likes}
-                </span>
-              </button>
+                <p className="video__button-text">{videosDetails.likes}</p>
+              </div>
             </div>
           </div>
         </div>
         <div className="video__text">
-          <span className="video__description">
-            {videosDetails.description}
-          </span>
+          <p className="video__description">{videosDetails.description}</p>
         </div>
       </div>
     </section>

@@ -2,36 +2,11 @@ import "./NewComment.scss";
 import commentAvatar from "../../assets/images/Mohan-muruge.jpg";
 
 const NewComment = () => {
-  // const realCommentTime = () => {
-  //   const currentDate = new Date();
-  //   const timestampDate = new Date(comment.timestamp);
-  //   const timeDifference = currentDate - timestampDate;
-  //   const millisecondInOneHour = 1000 * 60 * 60;
-  //   const millisecondInOneMinute = 1000 * 60;
-  //   const hoursAgo = Math.floor(timeDifference / millisecondInOneHour);
-  //   if (hoursAgo === 0) {
-  //     const minutesAgo = Math.floor(timeDifference / millisecondInOneMinute);
-  //     if (minutesAgo < 1) {
-  //       return "Just now";
-  //     } else if (minutesAgo === 1) {
-  //       return "1 minute ago";
-  //     } else {
-  //       return `${minutesAgo} minutes ago`;
-  //     }
-  //   } else if (hoursAgo === 1) {
-  //     return "1 hour ago";
-  //   } else if (hoursAgo <= 24) {
-  //     return `${hoursAgo} hours ago`;
-  //   } else {
-  //     return timestampDate.toLocaleDateString();
-  //   }
-  // };
-
   return (
     <section className="comments">
       <div className="comments__container">
-        <h2 className="comments__count">3 comments</h2>
-        <h3 className="comments__title">Join the conversation</h3>
+        <h2 className="comments__count">3 Comments</h2>
+        <h3 className="comments__title">JOIN THE CONVERSATION</h3>
         <div className="comments__subcontainer">
           <img
             className="comments__image"
@@ -60,7 +35,7 @@ const NewComment = () => {
                 <path d="M0 0h24v24H0V0z" fill="none" />
                 <path d="M22 4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4V4zm-6 7h-3v3c0 .55-.45 1-1 1s-1-.45-1-1v-3H8c-.55 0-1-.45-1-1s.45-1 1-1h3V6c0-.55.45-1 1-1s1 .45 1 1v3h3c.55 0 1 .45 1 1s-.45 1-1 1z" />
               </svg>
-              <span className="user__button-text">COMMENT</span>
+              <span className="form__text">COMMENT</span>
             </button>
           </form>
         </div>

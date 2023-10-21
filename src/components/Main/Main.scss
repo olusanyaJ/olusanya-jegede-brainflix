@@ -1,4 +1,25 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
 .main__container {
   padding: 1rem;
-  border: 1px solid red;
+  @include tablet {
+    padding: 1rem 2rem;
+  }
+  @include desktop {
+    width: $desktop-breakpoint;
+    margin: 0 auto;
+    display: flex;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.left {
+  @include desktop {
+    padding-top: 1.5rem;
+    border-right: 1px solid $secondary-color-mercury;
+  }
 }

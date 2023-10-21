@@ -24,15 +24,19 @@ const Main = () => {
 
   return (
     <main className="main">
-      <VideoPlayer videosData={filterActiveVideo} />
+      <VideoPlayer videosData={activeVideo} />
       <div className="main__container">
-        <VideoDetails videosDetails={activeVideo} />
-        <NewComment />
-        <VideoComments videosDetails={activeVideo} />
-        <VideosList
-          videosData={filterActiveVideo}
-          handleVideoClicked={handleVideoClicked}
-        />
+        <div className="left">
+          <VideoDetails videosDetails={activeVideo} />
+          <NewComment />
+          <VideoComments videosDetails={activeVideo} />
+        </div>
+        <div className="right">
+          <VideosList
+            videosData={filterActiveVideo}
+            handleVideoClicked={handleVideoClicked}
+          />
+        </div>
       </div>
     </main>
   );

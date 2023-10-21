@@ -6,19 +6,20 @@ const VideosList = ({ videosData, handleVideoClicked }) => {
       <h3 className="videos-list__title">NEXT VIDEOS</h3>
       <div className="videos">
         {videosData.map((video) => {
-          console.log(video.image);
-
           return (
             <button
+              className="videos__item"
               key={video.id}
               onClick={() => {
                 handleVideoClicked(video.id);
               }}
             >
-              <img className="imagee" src={video.image} alt="" />
-              <div>
-                <p>{video.title}</p>
-                <p>{video.channel}</p>
+              <div className="videos__image-container">
+                <img className="videos__image" src={video.image} alt="" />
+              </div>
+              <div className="videos__desc">
+                <p className="videos__title">{video.title}</p>
+                <p className="videos__channel">{video.channel}</p>
               </div>
             </button>
           );
