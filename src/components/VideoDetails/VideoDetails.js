@@ -1,7 +1,30 @@
 import "./VideoDetails.scss";
 
 const VideoDetails = ({ videosDetails }) => {
-  const timestampDate = new Date(videosDetails.timestamp).toLocaleDateString();
+  const realCommentTime = () => {
+    const currentDate = new Date();
+    const timestampDate = new Date(videosDetails.timestamp);
+    const timeDifference = currentDate - timestampDate;
+    const millisecondInOneHour = 1000 * 60 * 60;
+    const millisecondInOneMinute = 1000 * 60;
+    const hoursAgo = Math.floor(timeDifference / millisecondInOneHour);
+    if (hoursAgo === 0) {
+      const minutesAgo = Math.floor(timeDifference / millisecondInOneMinute);
+      if (minutesAgo < 1) {
+        return "Just now";
+      } else if (minutesAgo === 1) {
+        return "1 minute ago";
+      } else {
+        return `${minutesAgo} minutes ago`;
+      }
+    } else if (hoursAgo === 1) {
+      return "1 hour ago";
+    } else if (hoursAgo <= 24) {
+      return `${hoursAgo} hours ago`;
+    } else {
+      return timestampDate.toLocaleDateString();
+    }
+  };
 
   return (
     <section className="video-details">
@@ -11,7 +34,9 @@ const VideoDetails = ({ videosDetails }) => {
           <div className="video__specs">
             <div className="video__credentials">
               <span className="video__author">By {videosDetails.channel}</span>
-              <span className="video__date">{timestampDate}</span>
+              <span className="video__date">
+                {realCommentTime(videosDetails.timestamp)}
+              </span>
             </div>
             <div className="video__stats">
               <div className="video__wrapper video__wrapper--top">

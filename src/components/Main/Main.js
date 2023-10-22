@@ -26,12 +26,12 @@ const Main = () => {
     <main className="main">
       <VideoPlayer videosData={activeVideo} />
       <div className="main__container">
-        <div className="left">
+        <div className="main__details">
           <VideoDetails videosDetails={activeVideo} />
           <NewComment />
           <VideoComments videosDetails={activeVideo} />
         </div>
-        <div className="right">
+        <div className="main__playlist">
           <VideosList
             videosData={filterActiveVideo}
             handleVideoClicked={handleVideoClicked}

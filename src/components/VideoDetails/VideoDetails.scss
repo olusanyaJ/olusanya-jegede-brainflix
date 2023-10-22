@@ -45,6 +45,8 @@
   &__author {
     color: $secondary-color-black;
     @include subheader;
+    font-size: 1rem;
+    font-weight: 600;
     @include tablet {
       margin-right: 2.5rem;
     }
