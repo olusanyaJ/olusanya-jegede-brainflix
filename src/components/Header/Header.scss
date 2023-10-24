@@ -3,6 +3,28 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
+.user__upload {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 0.3125rem;
+  border: 0;
+  text-decoration: none;
+  fill: $primary-color-white;
+  border: 1px solid $primary-color-blue;
+  background: url("../../assets/icons/upload.svg") left center no-repeat
+    $primary-color-blue;
+  color: $primary-color-white;
+  cursor: pointer;
+  @include labels-and-buttons;
+}
+.user__upload-text {
+  color: $primary-color-white;
+  @include body-copy;
+  font-weight: 700;
+  text-align: center;
+  flex-grow: 1;
+}
+
 .header {
   background-color: $primary-color-white;
   &__container {
@@ -139,15 +161,7 @@
   }
 
   &__upload-icon {
-    fill: $primary-color-white;
     width: 20px;
     height: 20px;
-  }
-
-  &__button-text {
-    color: $primary-color-white;
-    @include body-copy;
-    text-align: center;
-    flex-grow: 1;
   }
 }

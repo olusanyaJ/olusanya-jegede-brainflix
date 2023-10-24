@@ -42,9 +42,11 @@ const Header = () => {
               />
             </div>
 
-            {/* <Link to="/upload">UPLOAD</Link> */}
+            <Link to="/upload" className="user__upload">
+              <p className="user__upload-text">UPLOAD</p>
+            </Link>
 
-            <button className="user__button" type="user__upload">
+            {/* <button className="user__button" type="user__upload">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="user__upload-icon"
@@ -62,7 +64,7 @@ const Header = () => {
                 </g>
               </svg>
               <span className="user__button-text">UPLOAD</span>
-            </button>
+            </button> */}
 
             <img
               className="user__image user__image--tablet"

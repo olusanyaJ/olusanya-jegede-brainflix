@@ -1,0 +1,115 @@
+@use "../../styles/partials/reset";
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.upload {
+  border: 2px solid red;
+  padding: 1rem;
+
+  &__title {
+    border: 2px solid yellow;
+  }
+
+  &__container {
+    border: 2px solid blue;
+  }
+
+  &__subtitle {
+    color: $primary-color-silver;
+    font-size: 1rem;
+  }
+
+  &__video {
+    width: 100%;
+  }
+
+  &__form {
+    border: 2px solid brown;
+  }
+
+  &__wrapper {
+    border: 2px solid green;
+    text-align: center;
+  }
+
+  &__button {
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.3125rem;
+    border: 0;
+    background: url("../../assets/icons/publish.svg") left center no-repeat
+      $primary-color-black;
+    color: $primary-color-white;
+    cursor: pointer;
+    @include labels-and-buttons;
+  }
+
+  &__link {
+    text-decoration: none;
+  }
+  &__cancel {
+    color: blue;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    width: 90%;
+  }
+
+  &__group {
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    color: $primary-color-silver;
+    font-size: 0.75rem;
+  }
+
+  &__input {
+    background-color: $secondary-color-alabaster;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $secondary-color-mercury;
+
+    &::placeholder {
+      color: $primary-color-black;
+      font-family: "Avenir Next LT Pro", sans-serif;
+      @include labels-and-buttons;
+    }
+  }
+
+  &__input:active,
+  &__area:active {
+    border: 1px solid $secondary-color-black;
+  }
+
+  &__area {
+    background-color: $secondary-color-alabaster;
+    padding: 1rem;
+    height: 6rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid $secondary-color-mercury;
+
+    &::placeholder {
+      color: $primary-color-black;
+      font-family: "Avenir Next LT Pro", sans-serif;
+      @include labels-and-buttons;
+    }
+  }
+
+  &__button:hover {
+    background-color: $secondary-color-black;
+  }
+
+  &__invalid-input {
+    border: 1px solid red;
+  }
+}
