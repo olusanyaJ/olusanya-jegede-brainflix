@@ -1,6 +1,7 @@
 import "./Header.scss";
 import logo from "../../assets/logo/BrainFlix-logo.svg";
 import userAvatar from "../../assets/images/Mohan-muruge.jpg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -40,6 +41,8 @@ const Header = () => {
                 alt="Mohan-muruge"
               />
             </div>
+
+            {/* <Link to="/upload">UPLOAD</Link> */}
 
             <button className="user__button" type="user__upload">
               <svg
