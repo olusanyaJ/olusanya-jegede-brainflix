@@ -3,35 +3,6 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.user__upload {
-  padding: 0.5rem;
-  width: 100%;
-  border-radius: 0.3125rem;
-  border: 0;
-  text-decoration: none;
-  fill: $primary-color-white;
-  border: 1px solid $primary-color-blue;
-  background: url("../../assets/icons/upload.svg") 1rem center no-repeat
-    $primary-color-blue;
-  color: $primary-color-white;
-  cursor: pointer;
-  @include labels-and-buttons;
-  @include tablet {
-    width: 50%;
-    margin-right: 1rem;
-    background: url("../../assets/icons/upload.svg") 0.5rem center no-repeat
-      $primary-color-blue;
-  }
-}
-.user__upload-text {
-  color: $primary-color-white;
-  @include body-copy;
-  font-weight: 700;
-  text-align: center;
-  flex-grow: 1;
-  margin: 0;
-}
-
 .header {
   background-color: $primary-color-white;
   &__container {
@@ -83,9 +54,9 @@
     display: flex;
     margin-bottom: 1rem;
     @include tablet {
-      margin-right: 1rem;
+      margin-right: 2rem;
       margin-bottom: 0;
-      height: 2.5rem;
+      height: 3rem;
       width: 20rem;
     }
     @include desktop {
@@ -144,8 +115,8 @@
       }
     }
     @include tablet {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3rem;
+      height: 3rem;
     }
   }
 
@@ -167,8 +138,38 @@
     }
   }
 
+  &__upload {
+    padding: 0.75rem;
+    width: 100%;
+    border-radius: 0.3125rem;
+    border: 0;
+    text-decoration: none;
+    fill: $primary-color-white;
+    border: 1px solid $primary-color-blue;
+    background: url("../../assets/icons/upload.svg") 0.5rem center no-repeat
+      $primary-color-blue;
+    color: $primary-color-white;
+    cursor: pointer;
+    @include labels-and-buttons;
+    @include tablet {
+      width: 45%;
+      margin-right: 2rem;
+      background: url("../../assets/icons/upload.svg") 0.5rem center no-repeat
+        $primary-color-blue;
+    }
+  }
+
   &__upload-icon {
     width: 20px;
     height: 20px;
+  }
+
+  &__upload-text {
+    color: $primary-color-white;
+    @include body-copy;
+    font-size: 0.875rem;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
   }
 }
