@@ -26,7 +26,9 @@ const UploadPage = () => {
       alert("You must enter a description for your video");
       return;
     }
-    alert("Upload succesful");
+    alert(
+      "Upload succesful, you are now being redirected back to the Home Page!"
+    );
     goHome("/");
   };
   return (
