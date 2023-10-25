@@ -11,11 +11,17 @@
   text-decoration: none;
   fill: $primary-color-white;
   border: 1px solid $primary-color-blue;
-  background: url("../../assets/icons/upload.svg") left center no-repeat
+  background: url("../../assets/icons/upload.svg") 1rem center no-repeat
     $primary-color-blue;
   color: $primary-color-white;
   cursor: pointer;
   @include labels-and-buttons;
+  @include tablet {
+    width: 50%;
+    margin-right: 1rem;
+    background: url("../../assets/icons/upload.svg") 0.5rem center no-repeat
+      $primary-color-blue;
+  }
 }
 .user__upload-text {
   color: $primary-color-white;
@@ -23,6 +29,7 @@
   font-weight: 700;
   text-align: center;
   flex-grow: 1;
+  margin: 0;
 }
 
 .header {
@@ -79,7 +86,7 @@
       margin-right: 1rem;
       margin-bottom: 0;
       height: 2.5rem;
-      width: 16rem;
+      width: 20rem;
     }
     @include desktop {
       width: 22rem;

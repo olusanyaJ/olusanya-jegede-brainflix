@@ -4,54 +4,125 @@
 @use "../../styles/partials/mixins" as *;
 
 .upload {
-  border: 2px solid red;
-  padding: 1rem;
+  border-top: 1px solid $secondary-color-mercury;
 
   &__title {
-    border: 2px solid yellow;
+    padding: 2rem 1rem 0;
+    @include page-header;
+    margin: 0;
+    @include tablet {
+      padding: 2.5rem 2rem 0.5rem;
+    }
+    @include desktop {
+      width: $desktop-breakpoint;
+      padding-top: 1.5rem;
+      margin: 0 auto;
+    }
   }
-
   &__container {
-    border: 2px solid blue;
+    padding: 1rem;
+    @include tablet {
+      margin-bottom: 2rem;
+      padding: 1rem 2rem;
+    }
+    @include desktop {
+      width: $desktop-breakpoint;
+      margin: 0 auto;
+      padding-bottom: 0;
+      padding-top: 0;
+      border-top: none;
+      border-bottom: none;
+    }
   }
-
+  &__subcontainer {
+    @include tablet {
+      padding-top: 1.5rem;
+      border-top: 1px solid $secondary-color-mercury;
+      border-bottom: 1px solid $secondary-color-mercury;
+      margin-bottom: 1.5rem;
+    }
+    @include desktop {
+      display: flex;
+      padding: 1.5rem 0;
+    }
+  }
   &__subtitle {
     color: $primary-color-silver;
-    font-size: 1rem;
+    @include section-header;
+    margin: 0;
+    padding-bottom: 0.25rem;
+    font-weight: 400;
+  }
+
+  &__inner {
+    @include desktop {
+      width: 50%;
+      margin-right: 2rem;
+    }
   }
 
   &__video {
     width: 100%;
+    border-radius: 0.3125rem;
+    margin-bottom: 1rem;
+    @include tablet {
+      width: 50%;
+    }
+    @include desktop {
+      width: 100%;
+      margin-bottom: 0;
+    }
   }
 
   &__form {
-    border: 2px solid brown;
+    @include desktop {
+      width: 100%;
+    }
   }
 
   &__wrapper {
-    border: 2px solid green;
     text-align: center;
+    @include tablet {
+      text-align: none;
+      display: flex;
+      flex-direction: row-reverse;
+    }
   }
 
   &__button {
-    padding: 0.5rem;
+    padding: 0.75rem;
     width: 100%;
     border-radius: 0.3125rem;
     border: 0;
-    background: url("../../assets/icons/publish.svg") left center no-repeat
-      $primary-color-black;
+    background: url("../../assets/icons/publish.svg") 1rem center no-repeat
+      $primary-color-blue;
     color: $primary-color-white;
     cursor: pointer;
     @include labels-and-buttons;
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    @include tablet {
+      margin-left: 4rem;
+      padding: 0;
+      width: 22.5%;
+      background: url("../../assets/icons/publish.svg") 0.75rem center no-repeat
+        $primary-color-blue;
+    }
+    @include desktop {
+      padding: 0.25rem;
+      margin-bottom: 0;
+      width: 15%;
+    }
   }
 
   &__link {
     text-decoration: none;
   }
+
   &__cancel {
-    color: blue;
-    font-weight: bold;
-    margin: 0;
+    color: $primary-color-blue;
+    margin: 1rem 0;
   }
 }
 
@@ -59,11 +130,20 @@
   display: flex;
   flex-direction: column;
   @include tablet {
-    width: 90%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  @include desktop {
+    margin-bottom: 0;
+    height: 14.0594rem;
+    justify-content: space-between;
   }
 
   &__group {
     margin-bottom: 1rem;
+    @include desktop {
+      margin-bottom: 0;
+    }
   }
 
   &__label {
