@@ -21,5 +21,12 @@
   @include desktop {
     padding-top: 1.5rem;
     border-right: 1px solid $secondary-color-mercury;
+    width: 100%;
+  }
+}
+
+.main__playlist {
+  @include desktop {
+    width: 80%;
   }
 }

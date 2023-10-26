@@ -15,7 +15,11 @@ const VideosList = ({ videosData, handleVideoClicked }) => {
               }}
             >
               <div className="videos__image-container">
-                <img className="videos__image" src={video.image} alt="" />
+                <img
+                  className="videos__image"
+                  src={video.image}
+                  alt="screenshot of a video"
+                />
               </div>
               <div className="videos__desc">
                 <p className="videos__title">{video.title}</p>

@@ -30,6 +30,12 @@
 
   &__wrapper {
     width: 85%;
+    @include tablet {
+      width: 100%;
+    }
+    @include desktop {
+      width: 85%;
+    }
   }
 }
 

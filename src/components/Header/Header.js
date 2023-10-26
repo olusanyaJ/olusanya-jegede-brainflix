@@ -9,14 +9,18 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <div className="brand">
-          <img className="brand__logo" src={logo} alt="" />
+          <img className="brand__logo" src={logo} alt="Brainflix Logo" />
         </div>
 
         <div className="user">
           <div className="user__wrapper">
             <div className="user__search">
               <div className="user__search-tab">
-                <img src={searchIcon} alt="" className="user__search-icon" />
+                <img
+                  src={searchIcon}
+                  alt="search icon"
+                  className="user__search-icon"
+                />
                 <input
                   className="user__search-input"
                   type="text"
