@@ -1,5 +1,5 @@
 import "./VideoPlayer.scss";
-const VideoPlayer = ({ videosData }) => {
+const VideoPlayer = ({ activeVideo }) => {
   return (
     <section className="video-player">
       <div className="video-player__wrapper">
@@ -9,7 +9,7 @@ const VideoPlayer = ({ videosData }) => {
           height=""
           controls
           type="video/mp4"
-          poster={videosData.image}
+          poster={activeVideo.image}
         />
       </div>
     </section>

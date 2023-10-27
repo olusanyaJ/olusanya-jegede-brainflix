@@ -11,8 +11,9 @@ function App() {
         <Header />
         <main>
           <Routes>
-            <Route path="/" element={<Main />}></Route>
-            <Route path="/upload" element={<UploadPage />}></Route>
+            <Route path="/" element={<Main />} />
+            <Route path="/videos/:activeVideoId" element={<Main />} />
+            <Route path="/upload" element={<UploadPage />} />
           </Routes>
         </main>
       </BrowserRouter>

@@ -2,10 +2,10 @@ import "./VideoDetails.scss";
 import viewsIcon from "../../assets/icons/views.svg";
 import likesIcon from "../../assets/icons/likes.svg";
 
-const VideoDetails = ({ videosDetails }) => {
+const VideoDetails = ({ activeVideo }) => {
   const realCommentTime = () => {
     const currentDate = new Date();
-    const timestampDate = new Date(videosDetails.timestamp);
+    const timestampDate = new Date(activeVideo.timestamp);
     const timeDifference = currentDate - timestampDate;
     const millisecondInOneHour = 1000 * 60 * 60;
     const millisecondInOneMinute = 1000 * 60;
@@ -32,28 +32,28 @@ const VideoDetails = ({ videosDetails }) => {
     <section className="video-details">
       <div className="video-details__wrapper">
         <div className="video">
-          <h1 className="video__title">{videosDetails.title}</h1>
+          <h1 className="video__title">{activeVideo.title}</h1>
           <div className="video__specs">
             <div className="video__credentials">
-              <span className="video__author">By {videosDetails.channel}</span>
+              <span className="video__author">By {activeVideo.channel}</span>
               <span className="video__date">
-                {realCommentTime(videosDetails.timestamp)}
+                {realCommentTime(activeVideo.timestamp)}
               </span>
             </div>
             <div className="video__stats">
               <div className="video__wrapper video__wrapper--top">
                 <img src={viewsIcon} alt="views icon" className="video__icon" />
-                <p className="video__button-text">{videosDetails.views}</p>
+                <p className="video__button-text">{activeVideo.views}</p>
               </div>
               <div className="video__wrapper">
                 <img src={likesIcon} alt="likes icon" className="video__icon" />
-                <p className="video__button-text">{videosDetails.likes}</p>
+                <p className="video__button-text">{activeVideo.likes}</p>
               </div>
             </div>
           </div>
         </div>
         <div className="video__text">
-          <p className="video__description">{videosDetails.description}</p>
+          <p className="video__description">{activeVideo.description}</p>
         </div>
       </div>
     </section>

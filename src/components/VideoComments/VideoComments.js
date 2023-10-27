@@ -1,9 +1,9 @@
 import "./VideoComments.scss";
 
-const VideoComments = ({ videosDetails }) => {
+const VideoComments = ({ activeVideo }) => {
   return (
     <section className="video-section">
-      {videosDetails.comments.map((comment) => {
+      {activeVideo.comments.map((comment) => {
         const realCommentTime = () => {
           const currentDate = new Date();
           const timestampDate = new Date(comment.timestamp);
@@ -31,7 +31,7 @@ const VideoComments = ({ videosDetails }) => {
           }
         };
         return (
-          <div className="video-comments" key={comment}>
+          <div className="video-comments" key={comment.id}>
             <div className="video-comments__image"></div>
             <div className="video-comments__wrapper">
               <div className="comment">
