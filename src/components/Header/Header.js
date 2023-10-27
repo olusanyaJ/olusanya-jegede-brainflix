@@ -9,7 +9,9 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <div className="brand">
-          <img className="brand__logo" src={logo} alt="Brainflix Logo" />
+          <Link to={"/"}>
+            <img className="brand__logo" src={logo} alt="Brainflix Logo" />
+          </Link>
         </div>
 
         <div className="user">
