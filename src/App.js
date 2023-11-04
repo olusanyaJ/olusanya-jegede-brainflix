@@ -9,13 +9,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <main>
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/videos/:activeVideoId" element={<Main />} />
-            <Route path="/upload" element={<UploadPage />} />
-          </Routes>
-        </main>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/videos/:activeVideoId" element={<Main />} />
+          <Route path="/upload" element={<UploadPage />} />
+        </Routes>
       </BrowserRouter>
     </div>
   );
