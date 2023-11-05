@@ -4,24 +4,29 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const VideosList = ({ activeVideo }) => {
-  const baseUrl = "https://project-2-api.herokuapp.com/";
-  const apiKey = "969924e0-6223-4838-a69b-6e5590910a1d";
   const [videosList, setVideosList] = useState(null);
 
+  const fetchData = async () => {
+    try {
+      const { data } = await axios.get(process.env.REACT_APP_BASE_URL);
+      const reducedDataSet = data.map((video) => ({
+        id: video.id,
+        title: video.title,
+        image: video.image,
+        channel: video.channel,
+      }));
+      setVideosList(reducedDataSet);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const { data } = await axios.get(`${baseUrl}videos/?api_key=${apiKey}`);
-        setVideosList(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
     fetchData();
   }, []);
 
   if (!videosList) {
-    return <>Loading, keep waiting lol...</>;
+    return <>Loading, keep waiting lol</>;
   }
 
   const filteredVideos = videosList.filter(
@@ -43,7 +48,7 @@ const VideosList = ({ activeVideo }) => {
                 <img
                   className="videos__image"
                   src={video.image}
-                  alt="screenshot of a video"
+                  alt="Video Thumbnail"
                 />
               </div>
               <div className="videos__desc">

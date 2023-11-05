@@ -2,8 +2,9 @@ import "./UploadPage.scss";
 import { Link, useNavigate } from "react-router-dom";
 import uploadImage from "../../assets/images/Upload-video-preview.jpg";
 import { useState } from "react";
+import axios from "axios";
 
-const UploadPage = () => {
+const UploadPage = ({ fetchData }) => {
   const goHome = useNavigate();
   const [uploadFormTitle, setUploadFormTitle] = useState("");
   const [uploadFormDescription, setUploadFormDescription] = useState("");
@@ -16,8 +17,15 @@ const UploadPage = () => {
     setUploadFormDescription(event.target.value);
   };
 
-  const handleClick = (event) => {
+  const handleClick = async (event) => {
     event.preventDefault();
+
+    const newVideoUpload = {
+      title: uploadFormTitle,
+      description: uploadFormDescription,
+      image: uploadImage,
+    };
+
     if (!uploadFormTitle) {
       alert("You must enter a title for your video");
       return;
@@ -29,8 +37,18 @@ const UploadPage = () => {
     alert(
       "Upload succesful, you are now being redirected back to the Home Page!"
     );
+
+    try {
+      await axios.post(process.env.REACT_APP_BASE_URL, newVideoUpload);
+    } catch (error) {
+      console.error(error);
+    }
+
+    fetchData();
+
     goHome("/");
   };
+
   return (
     <section className="upload">
       <h2 className="upload__title">Upload Video</h2>

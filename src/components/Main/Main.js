@@ -9,39 +9,28 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 const Main = () => {
-  const baseUrl = "https://project-2-api.herokuapp.com/videos/";
-  const defaultKey = "84e96018-4022-434e-80bf-000ce4cd12b8";
-  const apiKey = "969924e0-6223-4838-a69b-6e5590910a1d";
   const [activeVideo, setActiveVideo] = useState(null);
 
   const { activeVideoId } = useParams();
 
   useEffect(() => {
-    if (!activeVideoId) {
-      const fetchVideosData = async () => {
-        try {
+    const fetchVideosData = async () => {
+      try {
+        if (!activeVideoId) {
+          const { data } = await axios.get(process.env.REACT_APP_BASE_URL);
+          setActiveVideo(data[0]);
+        } else {
           const { data } = await axios.get(
-            `${baseUrl}${defaultKey}?api_key=${apiKey}`
+            `${process.env.REACT_APP_BASE_URL}/${activeVideoId}`
           );
           setActiveVideo(data);
-        } catch (error) {
-          console.error(error);
         }
-      };
-      fetchVideosData();
-    } else {
-      const fetchVideosData = async () => {
-        try {
-          const { data } = await axios.get(
-            `${baseUrl}${activeVideoId}?api_key=${apiKey}`
-          );
-          setActiveVideo(data);
-        } catch (error) {
-          console.error(error);
-        }
-      };
-      fetchVideosData();
-    }
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchVideosData();
   }, [activeVideoId]);
 
   if (!activeVideo) {
